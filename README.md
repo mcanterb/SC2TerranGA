@@ -7,6 +7,7 @@ The program is multithreaded and designed to take advantage of multiple cores fo
 ## Requirements
 
 Tested with JDK 6. Should work with JDK 5 and up.
+Requires Java 5 or greater to run.
 
 ## Configuring
 
@@ -39,6 +40,14 @@ Once the files are compiled, you can run the following to start the program:
 
 	cd bin
 	java org.sc2sim.genetic.GeneticStar
+
+## Running Precompiled Version
+
+If you downloaded the precompiled version, you will need to open a terminal and go to the download directory. Then run:
+	
+	java -jar SC2TerranGA.jar
+
+
 
 ## Output
 
