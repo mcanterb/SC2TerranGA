@@ -19,6 +19,8 @@ public class GeneticStar {
 	private float mutationRate = 0.5f;
 	private float crossoverRate = 0.9f;
 	private int populationSize = 3000;
+	private int numberOfGenerations = 150;
+	private int numberOfThreads = 5;
 	private Chromosome[] population;
 	private Chromosome[] temp;
 	private StarcraftWorld world;
@@ -76,7 +78,7 @@ public class GeneticStar {
 		}
 		
 		
-		for(int i = 0; i < 1000; i++)
+		for(int i = 0; i < numberOfGenerations; i++)
 		{
 			scorePopulation();
 			System.out.println("Run number "+i+" - Top Fitness: " + population[populationSize-1].getScore());
@@ -98,7 +100,7 @@ public class GeneticStar {
 	
 	private void scorePopulation() throws InterruptedException
 	{
-		ExecutorService service =  Executors.newFixedThreadPool(5, new SC2ThreadFactory());
+		ExecutorService service =  Executors.newFixedThreadPool(numberOfThreads, new SC2ThreadFactory());
 		current.set(0);
 		for(int i = 0; i < populationSize-1; i++)
 		{
